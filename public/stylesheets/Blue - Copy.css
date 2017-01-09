@@ -1,0 +1,75 @@
+html, body, #wrapper {
+	width:100%;
+	margin: 0;
+	padding: 0;
+	border: none;
+	BACKGROUND-IMAGE: url(../../App_Themes/Blue/Images/blue.jpg); 
+	BACKGROUND-REPEAT: repeat; 
+   }
+   #wrapper {
+      margin: 0 auto;
+      text-align: left;
+      vertical-align: middle;
+   }
+   .tablemenubackground
+   {
+	BACKGROUND-POSITION: center center; 
+	BACKGROUND-IMAGE: url(../../App_Themes/Blue/Images/BlueBTSmenu.png); 
+	BACKGROUND-REPEAT: no-repeat; 
+	HEIGHT: 50px
+   }
+   .tablelinebackground
+   {
+   	height: 3px; 
+   	background-color:  #3399FF
+   }
+   .tablesearchbackground
+   {
+   	font-size: 7pt; 
+   	background-image: url(../../App_Themes/Blue/Images/BlueSearch.jpg); 
+   	color: gray; 
+   	font-family: Tahoma; 
+   	height: 80px
+   }
+   .tablerecorddisplaytext
+   {
+   	font-size: 7pt;
+   	color: #003399; 
+   	font-family: Tahoma;
+   }
+   .tablemaintdisplay
+   {
+   	font-weight: bold; 
+   	font-size: 11pt; 
+   	color: white;
+    font-family: Candara; 
+    height: 18px; 
+    background-color: #003399
+   }
+   .tablemaintinfodisplay
+   {
+   	border-right: #330000 1px solid; 
+   	border-top: #330000 1px solid;
+    font-weight: bold; 
+    font-size: 8pt; 
+    border-left: #330000 1px solid; 
+    color: white; 
+    border-bottom: #330000 1px solid; 
+    font-family: Tahoma;
+	background-color : #006699
+   }
+   .tablesearcharea
+   {
+   	color: #0033CC; 
+   	height: 40px; 
+   	background-color: #ffffff
+   }
+
+.jumbotron 
+{ 
+    background-color: #f4511e; /* Orange */
+    color: #ffffff;
+}
+.bg-grey {
+    background-color: #f6f6f6;
+}
