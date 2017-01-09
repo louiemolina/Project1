@@ -1,0 +1,26 @@
+{
+  "name": "project_node",
+  "version": "1.0.0",
+  "description": "Place finder for restaurants",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/louiemolina/Project1.git"
+  },
+  "author": "Louie Vincent Molina",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/louiemolina/Project1/issues"
+  },
+  "homepage": "https://github.com/louiemolina/Project1#readme",
+  "dependencies": {
+    "jade": "^1.11.0",
+    "jquery": "^3.1.1",
+    "mongoose": "^4.7.6",
+    "path": "^0.12.7",
+    "pug": "^2.0.0-beta6"
+  }
+}
