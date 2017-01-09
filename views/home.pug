@@ -1,0 +1,53 @@
+html
+head
+title= title
+//Latest compiled and minified CSS
+link(rel='stylesheet', href='/bootstrap-3.3.7-dist/css/bootstrap.min.css')
+//link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.30.7/css/bootstrap.min.css' integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u' crossorigin='anonymous')
+//Optional theme
+link(rel='stylesheet', href='/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css')
+//link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css' integrity='sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp' crossorigin='anonymous')
+//customer style template
+link(rel='stylesheet', href='/stylesheets/Blue.css')
+body
+	div(class-='row' background-color='#3498DB' width='100%')
+		div(class='jumbotron text-center')
+			h1 Find the nearby restaurants
+			form(class='form-inline' method="post", action="/search")
+				div(class='form-group')
+					label(class='control-label' for="Search") Search
+					input(class='form=control' name="search", type="text",id="searid", placeholder="Search for places")
+					label(class='control-label' for="Near") Near
+					input(class='form=control' name="nearby", type="text",id="nearid", placeholder="Type the location")
+					button(class='btn btn-success' type='submit')
+						span(class='glyphicon glyphicon-search')
+div(class='row')
+		ul
+			each element in ojbJason
+				a(href=element.url)
+					li=element.name
+						div(class='row')
+							div(class="col-sm-6")
+								div(class='row')
+									img(src=element.rating_img_url)
+								div(class='row')
+									p=element.review_count+' Reviews' 
+								div(class='row')
+									a(href=element.url)
+										img(src=element.image_url)
+								div(class='row')
+									p='Address: '
+										ul
+											each addresselement in element.location.display_address
+												li=addresselement
+									p='Postal Code: '+ element.location.postal_code
+									p='Contact: '+ element.phone
+								div(class='row')
+									img(src=element.snippet_image_url height='30' width='30')
+									p='Comment:' + element.snippet_text
+							div(class="col-sm-6") Google Map
+								div(class='row')
+									img(src="https://maps.googleapis.com/maps/api/staticmap?center="+element.location.coordinate.latitude+","+element.location.coordinate.longitude+"&zoom=16&size=500x300&path=weight:3%7Ccolor:blue%7Cenc:{coaHnetiVjM??_SkM??~R&key=AIzaSyCegBtbfGm_7hVdHyxDDDLKc8QDbADoqkk")
+
+									
+											
