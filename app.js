@@ -30,7 +30,7 @@ app.get('/', function (req, res, next) {
 
 /* GET error page. */
 app.get('/error', function (req, res, next) {
-    res.render('error', {message:"Invalid Location (Near) criteria!!!"});
+    res.render('error', {message:"Invalid Search Location (Near) criteria! No records found! Press back button to search again."});
 });
 
 /* GET home page*/
@@ -74,6 +74,8 @@ app.post('/search', function (req, res, next) {
                 jsonBussObj = JSON.parse(jsonString).businesses; // Parse JSON string to JSON Object         
                 //console.log(jsonBussObj); // Print each business JSON object
                 var l = jsonBussObj.length; // Print length
+                console.log('DateandTime: ' + dt + ' RETURN! No of Records: ' + l); // No of records found.
+                if (l > 0) {
                 for (var i = 0; i < l; i++) {
                     var bussiObj = jsonBussObj[i];
                     var newBusiness = new Business();
@@ -127,14 +129,21 @@ app.post('/search', function (req, res, next) {
                 console.log('DateandTime: ' + dt + ' Records successfully saved in DB.');
                 //console.log(restoname);
                 res.render('home', { title: "Find the restaurant", ojbJason: restoname.sort()});
-
+            }
+            else {
+                mongoose.connection.close();
+                console.log('DateandTime: ' + dt + ' ERROR! Redirecting to Error page.');
+                res.redirect('error');
+            }
 
             })
             .catch(function (err) {
                 console.error(err);
             });
         }
-        else { res.redirect('error'); }
+        else { 
+            console.log('DateandTime: ' + dt + ' ERROR! Redirecting to Error page.');
+            res.redirect('error'); }
 });
 
 app.listen(process.env.PORT);
