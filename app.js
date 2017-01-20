@@ -33,6 +33,16 @@ app.get('/error', function (req, res, next) {
     res.render('error', {message:"Invalid Location (Near) criteria!!!"});
 });
 
+/* GET home page*/
+app.get('/home', function (req, res, next) {
+    res.render('home', { title: "Find the restaurant", ojbJason: [] });
+});
+
+/* POST home page*/
+app.post('/home', function (req, res, next) {
+    res.redirect('home');
+});
+
 /*POST search page*/
 app.post('/search', function (req, res, next) {
     var search = req.body.search;
